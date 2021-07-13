@@ -16,38 +16,6 @@ while($row=mysqli_fetch_array($res))
     $image=$row['image'];
 }
 ?>
-<?php
-//     include('config.php');
-//     $pid=intval($_GET['id']);
-//     if(isset($_POST['submit']))
-// {
-//     $users_id=$_POST['users_id'];
-//     $social1=$_POST['social1'];
-//     $social2=$_POST['social2'];
-//     $social3=$_POST['social3'];
-//     $social4=$_POST['social4'];
-//     $fullname=$_POST['fullname'];
-//     $gender=$_POST['gender'];
-//     $var1 = rand(1111,9999); 
-//     $var2 = rand(1111,9999);   
-//     $var3 = $var1.$var2;
-//     $var3 = $var3; 
-//     $fnm = $_FILES["image"]["name"];
-//     $dst = "images/".$var3.$fnm;
-//     $dst_db = "images/".$var3.$fnm;
-//     move_uploaded_file($_FILES["image"]["tmp_name"],$dst); 
-//     $sql=mysqli_query($con,"update users_data set users_id='$users_id', social1='$social1', social2='$social2', social3='$social3', social4='$social4', fullname='$fullname', gender='$gender', image='$dst_db' where idd='$pid' ");
-//     if($con->query($sql) === TRUE){
-//         echo ("<script LANGUAGE='JavaScript'>
-//         window.alert('User Data Has Been Updated Successfuly, Thank You');
-//         window.location.href='userdata.php';
-//         </script>");
-//     }
-//     else{
-//         echo "Undone". $sql ."</br>". $con->error;
-//     }
-// }
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -161,34 +129,6 @@ if(isset($_POST["submit"]))
     </script>
     <?php
 }
-// if(isset($_POST['submit']))
-// {
-//     $users_id=$_POST['users_id'];
-//     $social1=$_POST['social1'];
-//     $social2=$_POST['social2'];
-//     $social3=$_POST['social3'];
-//     $social4=$_POST['social4'];
-//     $fullname=$_POST['fullname'];
-//     $gender=$_POST['gender'];
-//     $var1 = rand(1111,9999); 
-//     $var2 = rand(1111,9999);   
-//     $var3 = $var1.$var2;
-//     $var3 = $var3; 
-//     $fnm = $_FILES["image"]["name"];
-//     $dst = "images/".$var3.$fnm;
-//     $dst_db = "images/".$var3.$fnm;
-//     move_uploaded_file($_FILES["image"]["tmp_name"],$dst); 
-//     $sql=mysqli_query($con,"update users_data set users_id='$users_id', social1='$social1', social2='$social2', social3='$social3', social4='$social4', fullname='$fullname', gender='$gender', image='$dst_db' where idd='$id'");
-//     if($con->query($sql) === TRUE){
-//         echo ("<script LANGUAGE='JavaScript'>
-//         window.alert('User Data Has Been Updated Successfuly, Thank You');
-//         window.location.href='userdata.php';
-//         </script>");
-//     }
-//     else{
-//         echo "Undone". $sql ."</br>". $con->error;
-//     }
-// }
 ?>
 </body>
 </html>
