@@ -1,21 +1,12 @@
 <?php
-    include('config.php');
-    $pid=intval($_GET['id']);
-    if(isset($_POST['save']))
-{
-    $phone=$_POST['phone'];
-    $email=$_POST['email'];
-    $sql=mysqli_query($con,"update users set phone='$phone', email='$email' where id='$pid' ");
-    if($con->query($sql) === TRUE){
-        echo ("<script LANGUAGE='JavaScript'>
-        window.alert('User Has Been Updated Successfuly, Thank You');
-        window.location.href='index.php';
-        </script>");
+    include "config.php";
+    $id=$_GET["id"];
+    $res=mysqli_query($con, "select * from users where id=$id");
+    while($row=mysqli_fetch_array($res))
+    {
+        $phone=$row["phone"];
+        $email=$row["email"];
     }
-    else{
-        echo "Undone". $sql ."</br>". $con->error;
-    }
-}
 ?>
 <html lang="en">
 <head>
@@ -41,21 +32,14 @@
 </nav>  
 </header>
 <h3 style="margin-left:45%;">Update Users Table</h3>
-<?php 
-
-$query=mysqli_query($con,"select * from users where users.id='$pid'");
-$cnt=1;
-while($row=mysqli_fetch_array($query))
-{
-?>
 <div class="container" style="width:50%;margin-left:24.5%;">
-  <form method="POST" action="createusers.php">
+  <form method="POST" action="">
     <div class="row">
       <div class="col-25">
         <label>Phone</label>
       </div>
       <div class="col-75">
-        <input type="text" name="phone" value="<?php echo htmlentities($row['phone']);?>" placeholder="Your Phone Number..">
+        <input type="text" name="phone" value="<?php echo $phone;?>" placeholder="Your Phone Number..">
       </div>
     </div>
     <div class="row">
@@ -63,14 +47,24 @@ while($row=mysqli_fetch_array($query))
         <label>Email</label>
       </div>
       <div class="col-75">
-        <input type="email" name="email" value="<?php echo htmlentities($row['email']);?>" placeholder="Your Email..">
+        <input type="email" name="email" value="<?php echo $email;?>" placeholder="Your Email..">
       </div>
     </div><br>
     <div class="row">
-      <input type="submit" name="save" value="Update">
+      <input type="submit" name="submit" value="Update">
     </div>
   </form>
 </div>
-<?php } ?>
+<?php 
+if(isset($_POST["submit"]))
+{
+    mysqli_query($con, "update users set phone='$_POST[phone]', email='$_POST[email]' where id=$id") or die(mysqli_error($con));
+    ?>
+    <script type="text/javascript">
+        window.location="index.php"
+    </script>
+    <?php
+}
+?>
 </body>
 </html>

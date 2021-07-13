@@ -4,7 +4,7 @@
 		  {
 		    mysqli_query($con,"delete from users where id = '".$_GET['id']."'");
 		  }
-?>
+?> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,7 +46,7 @@
     <td><?php echo htmlentities($row['phone']);?></td>
     <td><?php echo htmlentities($row['email']);?></td>
     <td>
-        <a href="edit-users.php?id=<?php echo $row['id']?>">Edit</a>
+        <a href="edit-users.php?id=<?php echo $row["id"]; ?>">Edit</a>
         <a href="users.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
     </td>
   </tr>

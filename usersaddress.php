@@ -72,7 +72,7 @@
     <td><?php echo htmlentities($row['fullname']);?></td>
     <td><?php echo htmlentities($row['gender']);?></td>
     <td>
-        <a href="edit-usersaddress.php?id=<?php echo $row['ida']?>">Edit</a>
+        <a href="edit-usersaddress.php?id=<?php echo $row["ida"]; ?>">Edit</a>
         <a href="usersaddress.php?id=<?php echo $row['ida']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
     </td>
   </tr>

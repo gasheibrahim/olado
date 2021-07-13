@@ -56,7 +56,7 @@
     <td><?php echo htmlentities($row['gender']);?></td>
     <td><img src="<?php echo $row['image']; ?>" width="200" height="200"></td>
     <td>
-        <a href="edit-usersdata.php?id=<?php echo $row['idd']?>">Edit</a>
+        <a href="edit-usersdata.php?id=<?php echo $row["idd"]; ?>">Edit</a>
         <a href="userdata.php?id=<?php echo $row['idd']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
     </td>
   </tr>
